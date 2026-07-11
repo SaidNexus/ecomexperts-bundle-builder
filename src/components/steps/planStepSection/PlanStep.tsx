@@ -9,14 +9,21 @@ type PlanStepProps = {
   nextStepRef?: React.RefObject<HTMLDivElement | null>;
 };
 
-export default function PlanStep({ expandedStep, setExpandedStep, nextStepRef }: PlanStepProps) {
+export default function PlanStep({
+  expandedStep,
+  setExpandedStep,
+  nextStepRef,
+}: PlanStepProps) {
   const { bundle, selectPlan } = useBundleContext();
   const isExpanded = expandedStep === 2;
 
   const handleNext = () => {
     setExpandedStep(3);
     setTimeout(() => {
-      nextStepRef?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      nextStepRef?.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }, 150);
   };
 
@@ -29,8 +36,12 @@ export default function PlanStep({ expandedStep, setExpandedStep, nextStepRef }:
         title="Choose tour plan"
         isExpanded={isExpanded}
         onToggle={() => setExpandedStep(isExpanded ? 0 : 2)}
-        icon={<ShieldIcon className="xl:w-[30px] md:h-[21px] 
-             md:w-[21px] w-[16px] h-[16px] text-[#6F7882] xl:h-[30px]" />}
+        icon={
+          <ShieldIcon
+            className="xl:w-[30px] md:h-[21px] 
+             md:w-[21px] w-[16px] h-[16px] text-[#6F7882] xl:h-[30px]"
+          />
+        }
       />
       {isExpanded && (
         <div className="flex flex-col gap-4">
@@ -38,7 +49,10 @@ export default function PlanStep({ expandedStep, setExpandedStep, nextStepRef }:
             <UnlimitedPlan selectPlan={selectPlan} planNum={bundle.plan} />
 
             <div
-              className="flex-1 p-[15px] rounded-[10px] space-y-2 bg-white cursor-pointer"
+              className={`flex-1 p-[15px] rounded-[10px] space-y-2 border 
+                ${bundle.plan === "noPlan" ? "border-[#4E2FD2]" :
+                   "bg-white cursor-pointer border-transparent"} 
+                   transition-all duration-300F`}
               onClick={() => selectPlan("noPlan")}
             >
               <div className="flex gap-4 items-center">

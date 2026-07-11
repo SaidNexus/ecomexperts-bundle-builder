@@ -22,7 +22,7 @@ export default function StepHeader({
       <header className="px-[15px]">
         <p
           className="text-[#484848]  tracking-[1.6px] 
-          text-[12px] font-gilroy font-medium uppercase "
+          text-[12px] font-gilroy mb-1 font-medium uppercase "
         >
           step {step} of 4
         </p>

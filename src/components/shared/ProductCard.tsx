@@ -106,7 +106,7 @@ export default function ProductCard({ item }: ProductCardProps) {
                   flex items-center justify-center
                   gap-1
                   w-[63px]
-                  py-[2px] px-[3px]
+                  py-[1px]
                   rounded-[2px]
                   border transition-all duration-200
                   ${
@@ -121,7 +121,7 @@ export default function ProductCard({ item }: ProductCardProps) {
                   alt={variant.color}
                   className="w-5 xl:w-[28px] object-contain"
                 />
-                <span className="text-[10px]">{variant.color}</span>
+                <span className="pr-[3.5px] text-[10px]">{variant.color}</span>
               </div>
             ))}
           </div>

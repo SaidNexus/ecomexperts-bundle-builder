@@ -17,7 +17,8 @@ export default function UnlimitedPlan({ selectPlan, planNum }: choosePlan) {
   return (
     <div
       onClick={() => selectPlan("unLimited")}
-      className="flex-1 border border-[#4E2FD2] p-[15px] rounded-[10px]"
+      className={`flex-1 border  ${planNum === "unLimited" ? "border-[#4E2FD2] " : "bg-white border-transparent"} 
+      p-[15px] rounded-[10px] transition-all duration-300`}
     >
       <div className="flex justify-between">
         <div className="flex items-center justify-center gap-[15px]">

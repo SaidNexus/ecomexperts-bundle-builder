@@ -16,6 +16,7 @@ export default function PlanStep({
 }: PlanStepProps) {
   const { bundle, selectPlan } = useBundleContext();
   const isExpanded = expandedStep === 2;
+  const selectedCount = bundle.plan && bundle.plan !== "noPlan" ? 1 : 0;
 
   const handleNext = () => {
     setExpandedStep(3);
@@ -33,9 +34,10 @@ export default function PlanStep({
     >
       <StepHeader
         step={2}
-        title="Choose tour plan"
+        title="Choose your plan"
         isExpanded={isExpanded}
         onToggle={() => setExpandedStep(isExpanded ? 0 : 2)}
+        selectedCount={selectedCount}
         icon={
           <ShieldIcon
             className="xl:w-[30px] md:h-[21px] 
@@ -62,9 +64,9 @@ export default function PlanStep({
                   readOnly
                   className="md:w-[18px] md:h-[18px] translate-0.5"
                 />
-                <h1 className="font-gilroy md:text-[16px] text-[14px] font-semibold">
+                <h3 className="font-gilroy md:text-[16px] text-[14px] font-semibold">
                   No Plan
-                </h1>
+                </h3>
               </div>
               <p className="pl-8 text-[12px] md:text-[14px] text-gray-500">
                 Continue without a subscription

@@ -24,7 +24,7 @@ export default function PlanReview() {
 
   return (
     <div className="space-y-[8px] pt-[15px] border-t border-[#CED6DE]">
-      <h1 className="text-[#A8B2BD] text-[12px] tracking-[3%]">PLAN</h1>
+      <h3 className="text-[#A8B2BD] text-[12px] tracking-[3%]">PLAN</h3>
 
       {/* Selected Plan */}
       {bundle.plan !== null && (

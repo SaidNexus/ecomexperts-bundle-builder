@@ -2,6 +2,7 @@ import SensorIcon from "../../assets/icons/SensorIcon";
 import StepHeader from "../ui/StepHeader";
 import Sensors from "../../data/Sensors.json";
 import SensorsCard from "../shared/SensorsCard";
+import { useBundleContext } from "../../context/BundleContext";
 
 type SensorsStepProps = {
   expandedStep: number;
@@ -10,7 +11,9 @@ type SensorsStepProps = {
 };
 
 export default function SensorsStep({ expandedStep, setExpandedStep, nextStepRef }: SensorsStepProps) {
+  const { bundle } = useBundleContext();
   const isExpanded = expandedStep === 3;
+  const selectedCount = bundle.sensors.reduce((acc, s) => acc + s.quantity, 0);
 
   const handleNext = () => {
     setExpandedStep(4);
@@ -27,6 +30,7 @@ export default function SensorsStep({ expandedStep, setExpandedStep, nextStepRef
         isExpanded={isExpanded}
         onToggle={() => setExpandedStep(isExpanded ? 0 : 3)}
         step={3}
+        selectedCount={selectedCount}
         title="Choose your sensors"
         icon={<SensorIcon className="w-[30px] text-[#6F7882] h-[30px]" />}
       />

@@ -2,6 +2,7 @@ import CameraIcon from "../../../assets/icons/CameraIcon";
 import ProductCard from "../../shared/ProductCard";
 import StepHeader from "../../ui/StepHeader";
 import Cameras from "../../../data/products.json";
+import { useBundleContext } from "../../../context/BundleContext";
 
 type CameraStepProps = {
   expandedStep: number;
@@ -10,7 +11,9 @@ type CameraStepProps = {
 };
 
 export default function CameraStep({ expandedStep, setExpandedStep, nextStepRef }: CameraStepProps) {
+  const { bundle } = useBundleContext();
   const isExpanded = expandedStep === 1;
+  const selectedCount = bundle.cameras.reduce((acc, c) => acc + c.quantity, 0);
 
   const handleNext = () => {
     setExpandedStep(2);
@@ -28,6 +31,7 @@ export default function CameraStep({ expandedStep, setExpandedStep, nextStepRef 
           step={1}
           isExpanded={isExpanded}
           onToggle={() => setExpandedStep(isExpanded ? 0 : 1)}
+          selectedCount={selectedCount}
           title="Choose your cameras"
           icon={
             <CameraIcon

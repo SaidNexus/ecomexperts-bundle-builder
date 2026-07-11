@@ -25,18 +25,19 @@ export default function UnlimitedPlan({ selectPlan, planNum }: choosePlan) {
           <input
             type="radio"
             checked={planNum == "unLimited"}
+            readOnly
             className="md:w-[18px] md:h-[18px] translate-0.5"
           />
 
           <div className="flex gap-[8px] items-center justify-center ">
             <WyzeGuaranteeIcon className="xl:w-[35px] xl:h-[35px] md:w-[28px] md:h-[28px] w-[20px] h-[20px]" />
 
-            <h1
+            <h3
               className="text-nowrap xl:text-[22px] font-gilroy
                  font-semibold text-[#3318ad] text-[18px]"
             >
               Can Unlimited
-            </h1>
+            </h3>
           </div>
         </div>
 

@@ -10,8 +10,9 @@ type ProtectionStepProps = {
 };
 
 export default function ProtectionStep({ expandedStep, setExpandedStep }: ProtectionStepProps) {
-  const { toggleProtection } = useBundleContext();
+  const { bundle, toggleProtection } = useBundleContext();
   const isExpanded = expandedStep === 4;
+  const selectedCount = bundle.protections.reduce((acc, p) => acc + p.quantity, 0);
 
   return (
     <div
@@ -21,6 +22,7 @@ export default function ProtectionStep({ expandedStep, setExpandedStep }: Protec
         step={4}
         isExpanded={isExpanded}
         onToggle={() => setExpandedStep(isExpanded ? 0 : 4)}
+        selectedCount={selectedCount}
         title="Add extra protection"
         icon={<ProtectionIcon className="w-[30px] text-[#6F7882] h-[31px]" />}
       />

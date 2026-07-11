@@ -1,75 +1,55 @@
-# React + TypeScript + Vite
+# Bundle Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+A React-based bundle builder application that allows users to customize their security system by selecting cameras, sensors, accessories, and protection plans. It features a step-by-step accordion interface and a dynamic review panel that calculates real-time pricing and savings.
 
-Currently, two official plugins are available:
+## Tech Stack
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS v4
+- Lucide React (for icons)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- Step-by-step accordion UI for selecting components.
+- Dynamic review panel displaying selected items, quantities, and real-time pricing.
+- LocalStorage persistence for saving and restoring user configurations.
+- Responsive design tailored for mobile, tablet, and desktop views.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+## Installation
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+## Running Locally
+```bash
+npm run dev
 ```
+The application will be available at `http://localhost:5173`.
+
+## Production Build
+```bash
+npm run build
+```
+This will compile TypeScript and generate production-ready assets in the `dist` folder.
+
+## Folder Structure
+- `src/components/`: Reusable React components grouped by feature (bundle builder, review panel, shared UI, etc.).
+- `src/context/`: React context for global state management (`BundleContext`).
+- `src/hooks/`: Custom hooks for state logic (`useBundle`).
+- `src/data/`: Static JSON data for products, sensors, and protection plans.
+- `src/types/`: TypeScript interfaces and type definitions.
+- `src/utils/`: Utility functions for calculations (`calculateBundleTotal`).
+
+## Design Decisions
+- **Context API for State Management:** Utilized React Context to share the bundle state and updater functions across the deeply nested step components and the review panel, avoiding prop drilling.
+- **Data-Driven UI:** Products and plans are rendered dynamically from static JSON data files to allow for easy updates to the catalog without touching the view components.
+
+## Trade-offs
+- **State Granularity:** The entire bundle state is currently managed in a single context provider. In a very large application, this might cause unnecessary re-renders. A future optimization could involve splitting the context or using memoization (`useMemo`, `useCallback`) to optimize performance.
+- **Hardcoded Product Rules:** Some business rules (like the pricing of the unlimited plan) are simplified and handled via specific IDs or hardcoded checks in the utility functions to meet the rapid prototype requirements.
+
+## Screenshots
+*(Screenshots placeholders - replace with actual application images)*
+![Desktop View](#)
+![Mobile View](#)

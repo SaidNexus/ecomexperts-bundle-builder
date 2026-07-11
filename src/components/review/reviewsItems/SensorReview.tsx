@@ -26,7 +26,7 @@ export default function SensorReview() {
   return (
     <div className="space-y-[8px] pt-[15px] border-t border-[#CED6DE]">
       {/* HEAD */}
-      <h1 className="text-[#A8B2BD] text-[12px] tracking-[3%]">SENSORS</h1>
+      <h3 className="text-[#A8B2BD] text-[12px] tracking-[3%]">SENSORS</h3>
 
       {selectedSensors.map((item) => (
         <div
@@ -46,9 +46,9 @@ export default function SensorReview() {
               />
             </div>
 
-            <h1 className="text-[14px] font-gilroy font-medium">
+            <p className="text-[14px] font-gilroy font-medium">
               {item.product.name}
-            </h1>
+            </p>
           </div>
 
           {/* COUNTER AND PRICE */}

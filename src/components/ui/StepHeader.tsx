@@ -8,6 +8,7 @@ type StepHeaderProps = {
   icon: ReactNode;
   isExpanded: boolean;
   onToggle: () => void;
+  selectedCount: number;
 };
 
 export default function StepHeader({
@@ -16,6 +17,7 @@ export default function StepHeader({
   icon,
   isExpanded,
   onToggle,
+  selectedCount,
 }: StepHeaderProps) {
   return (
     <>
@@ -40,7 +42,7 @@ export default function StepHeader({
         </div>
 
         <div className="text-selected xl:text-[16px] text-[14px] font-gilroy font-medium transition-all duration-300 flex items-center gap-[5px]">
-          <p>2 selected</p>
+          {selectedCount > 0 && <p>{selectedCount} selected</p>}
           {isExpanded ? (
             <ChevronUpIcon className="w-[10px] h-[7px]" />
           ) : (

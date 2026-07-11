@@ -24,7 +24,7 @@ export default function SensorsCard({ data }: SensorCardProps) {
         />
 
         <div className="flex flex-col gap-2">
-          <h1 className="text-[14px] font-gilroy font-semibold break-words">{data.name}</h1>
+          <h3 className="text-[14px] font-gilroy font-semibold break-words">{data.name}</h3>
           <h2 className="text-gray-500 font-gilroy font-semibold">
             ${activeVariant.price}
           </h2>

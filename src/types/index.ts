@@ -26,10 +26,10 @@ export interface BundleState {
   plan: string | null;
 }
 
-export type ProductCategory = "camera" | "sensor" | "plan" | "accessory";
+
 
 export type Sensor = Product;
-export type SensorVariant = ProductVariant;
+
 
 export interface ProtectionVariant {
   price: number;

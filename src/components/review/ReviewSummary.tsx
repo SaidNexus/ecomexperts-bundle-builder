@@ -15,9 +15,9 @@ export default function ReviewSummary() {
             className="xl:w-16 xl:h-16 w-[78px] h-[78px] sm:w-auto sm:h-auto"
           />
           <div className="flex flex-col hidden xl:block gap-2 sm:gap-[16px]">
-            <h1 className="font-semibold font-gilroy text-[16px] sm:text-[18px]">
+            <p className="font-semibold font-gilroy text-[16px] sm:text-[18px]">
               30-day hassle-free returns
-            </h1>
+            </p>
             <p className="font-regular font-gilroy text-[14px]">
               If you're not totally in love with the product, we will refund you
               100%.
@@ -25,20 +25,20 @@ export default function ReviewSummary() {
           </div>
         </div>
         <div className="flex flex-col xl:flex-row md:justify-between justify-center items-center sm:items-end gap-4 mt-4">
-          <h1
+          <p
             className="bg-[#4E2FD2] xl:p-[8px] px-1.5 rounded-[3px] font-gilroy font-medium
            text-white w-fit text-nowrap text-[14px] text-[12px] xl:text-[16px]"
           >
             as low as $19.19/mo
-          </h1>
+          </p>
 
           <div className="flex justify-end gap-2 sm:gap-[8px]">
             <p className="text-[#6F7882] font-gilroy font-medium md:text-[18px] xl:text-[22px] line-through">
               ${summary.subtotal.toFixed(2)}
             </p>
-            <h1 className="text-[19px] md:text-[24px] xl:text-[28px] text-[#4E2FD2] font-gilroy font-bold leading-none">
+            <p className="text-[19px] md:text-[24px] xl:text-[28px] text-[#4E2FD2] font-gilroy font-bold leading-none">
               ${summary.total.toFixed(2)}
-            </h1>
+            </p>
           </div>
         </div>
       </div>

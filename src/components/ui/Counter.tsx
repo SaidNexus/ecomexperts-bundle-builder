@@ -32,6 +32,7 @@ export default function Counter({
     <div className={`flex items-center justify-between ${styles.gap}`}>
       <button
         onClick={onDecrease}
+        aria-label="Decrease quantity"
         className={`border-[2px] ${styles.minus}
            w-[20px] h-[20px] rounded-[4px] 
            flex items-center justify-center `}
@@ -41,6 +42,7 @@ export default function Counter({
       <span>{quantity}</span>
       <button
         onClick={onIncrease}
+        aria-label="Increase quantity"
         className={`border-[2px] ${styles.plus} cursor-pointer
            w-[20px] h-[20px] rounded-[4px] flex items-center justify-center `}
       >

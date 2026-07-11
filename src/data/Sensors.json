@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "name": "Wyze Sense Motion Sensor",
+    "description": "Detects motion instantly and triggers your security automations.",
+    "required": false,
+    "learnMoreUrl": "#",
+    "variants": [
+      {
+        "color": "White",
+        "image": "https://res.cloudinary.com/ddzk9wuye/image/upload/v1783602379/wyze-sense-motion-sensor-wyze-labs-inc-814192_hqizps.webp",
+        "price": 24.98,
+        "originalPrice": null
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Wyze Sense Entry Sensor",
+    "description": "Know when doors and windows open or close in real time.",
+    "required": false,
+    "learnMoreUrl": "#",
+    "variants": [
+      {
+        "color": "White",
+        "image": "https://res.cloudinary.com/ddzk9wuye/image/upload/v1783603901/wyze-sense-entry-sensor-wyze-labs-inc-184639_impcj3.webp",
+        "price": 49.98,
+        "originalPrice": null
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Wyze Sense Hub",
+    "description": "Required to connect and manage your Wyze Sense devices.",
+    "required": true,
+    "learnMoreUrl": "#",
+    "variants": [
+      {
+        "color": "White",
+        "image": "https://res.cloudinary.com/ddzk9wuye/image/upload/v1783602379/wyze-sense-hub-wyze-labs-inc-960449_cuc8dp.webp",
+        "price": 55.98,
+        "originalPrice": null
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Wyze Sense Climate Sensor",
+    "description": "Monitor indoor temperature and humidity from anywhere.",
+    "required": false,
+    "learnMoreUrl": "#",
+    "variants": [
+      {
+        "color": "White",
+        "image": "https://res.cloudinary.com/ddzk9wuye/image/upload/v1783602379/wyze-sense-climate-sensor-wyze-labs-inc-715567_d9bg4y.webp",
+        "price": 44.98,
+        "originalPrice": null
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Wyze Sense Leak Sensor & Probe",
+    "description": "Detect water leaks early to help prevent costly damage.",
+    "required": false,
+    "learnMoreUrl": "#",
+    "variants": [
+      {
+        "color": "White",
+        "image": "https://res.cloudinary.com/ddzk9wuye/image/upload/v1783602379/wyze-sense-leak-sensor-probe-wyze-labs-inc-251032_oy7qxq.webp",
+        "price": 15.98,
+        "originalPrice": null
+      }
+    ]
+  }
+]

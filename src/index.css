@@ -29,7 +29,7 @@
 @theme {
   --font-gilroy: "Gilroy", sans-serif;
   --color-step-bg: #edf4ff;
-  --color-slected: #4e2fd2;
+  --color-selected: #4e2fd2;
 }
 
 @import "tailwindcss";

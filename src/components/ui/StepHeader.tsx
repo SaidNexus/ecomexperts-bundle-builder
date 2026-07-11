@@ -1,12 +1,13 @@
-import ShieldIcon from "../../assets/icons/ShieldIcon";
+import ChevronUpIcon from "../../assets/icons/ChevronUpIcon";
 import ChevronDownIcon from "../../assets/icons/ChevronDownIcon";
-import type { ReactNode } from "react";
+import type { ReactNode, Dispatch, SetStateAction } from "react";
 
 type StepHeaderProps = {
   step: number;
   title: string;
   icon: ReactNode;
-  isExpanded?: boolean;
+  isExpanded: boolean;
+  onToggle: () => void;
 };
 
 export default function StepHeader({
@@ -14,36 +15,39 @@ export default function StepHeader({
   title,
   icon,
   isExpanded,
+  onToggle,
 }: StepHeaderProps) {
   return (
-    <div>
+    <>
       <header className="px-[15px]">
         <p
           className="text-[#484848]  tracking-[1.6px] 
-                 text-[12px] font-gilroy font-medium uppercase "
+          text-[12px] font-gilroy font-medium uppercase "
         >
           step {step} of 4
         </p>
       </header>
       <div className="h-px bg-[#1f1f1f] " />
-      <div>
-        <div
-          className={`flex justify-between px-[15px] ${isExpanded ? "pt-[15px]" : "py-[21.5px]"} `}
-        >
-          <div className=" flex gap-[8px] items-center">
-            {icon}
-            <div className="text-[28px] text-[#0B0D10] font-gilroy font-semibold ">
-              {title}
-            </div>
-          </div>
-
-          <div className="text-slected font-gilroy font-medium flex items-center gap-[5px]">
-            <p>2 selected</p>
-            <ChevronDownIcon className="w-[10px] h-[7px]" />
+      <div
+        onClick={onToggle}
+        className={`flex justify-between px-[15px] cursor-pointer ${isExpanded ? "pt-[15px]" : "py-[21.5px]"} `}
+      >
+        <div className=" flex gap-[8px] items-center">
+          {icon}
+          <div className="xl:text-[28px] md:text-[18px] text-[16px] text-[#0B0D10] font-gilroy font-semibold ">
+            {title}
           </div>
         </div>
-        {step === 1 ? "" : <div className="h-px bg-[#1f1f1f] " />}
+
+        <div className="text-selected xl:text-[16px] text-[14px] font-gilroy font-medium transition-all duration-300 flex items-center gap-[5px]">
+          <p>2 selected</p>
+          {isExpanded ? (
+            <ChevronUpIcon className="w-[10px] h-[7px]" />
+          ) : (
+            <ChevronDownIcon className="w-[10px] h-[7px]" />
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

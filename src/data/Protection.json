@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Extended Warranty",
+    "description": "Extended 2-year warranty for your devices.",
+    "icon": "shield-check",
+    "type": "checkbox",
+    "required": false,
+    "reviewCategory": "plan",
+    "learnMoreUrl": "#",
+    "variants": [
+      {
+        "price": 29.99,
+        "originalPrice": null
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Fast Shipping",
+    "description": "Get your order faster with priority shipping.",
+    "icon": "fast-shipping",
+    "type": "checkbox",
+    "required": false,
+    "reviewCategory": "plan",
+    "learnMoreUrl": "#",
+    "variants": [
+      {
+        "price": 0,
+        "originalPrice": null
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Wyze MicroSD Card (256GB)",
+    "description": "High endurance microSD card for 24/7 recording.",
+    "icon": "sd-card",
+    "type": "quantity",
+    "required": false,
+    "reviewCategory": "accessories",
+    "learnMoreUrl": "#",
+    "variants": [
+      {
+        "price": 41.96,
+        "originalPrice": null
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Professional Installation",
+    "description": "Let our pros install your system for you.",
+    "icon": "wrench",
+    "type": "checkbox",
+    "required": false,
+    "reviewCategory": "plan",
+    "learnMoreUrl": "#",
+    "variants": [
+      {
+        "price": 119,
+        "originalPrice": null
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Theft Protection",
+    "description": "Replacement coverage if your device is stolen.",
+    "icon": "shield-alert",
+    "type": "checkbox",
+    "required": false,
+    "reviewCategory": "plan",
+    "learnMoreUrl": "#",
+    "variants": [
+      {
+        "price": 14.99,
+        "originalPrice": null
+      }
+    ]
+  }
+]

@@ -24,49 +24,43 @@ export default function PlanReview() {
 
   return (
     <div className="space-y-[8px] pt-[15px] border-t border-[#CED6DE]">
-      {/* TITLE */}
       <h1 className="text-[#A8B2BD] text-[12px] tracking-[3%]">PLAN</h1>
 
       {/* Selected Plan */}
-      <div className="flex justify-between items-center py-4">
-        {bundle.plan === "noPlan" ? (
-          <h2 className="font-gilroy font-medium text-[18px]">No Plan</h2>
-        ) : (
-          <div className="flex items-center gap-3 w-full">
-            <div className="flex justify-between w-full">
-              <div className="flex items-center gap-1">
-                <WyzeGuaranteeIcon className="md:w-10 md:h-10 w-5 h-5 translate-y-0.5 md:translate-y-1" />
+      {bundle.plan !== null && (
+        <div className="flex justify-between items-center py-4">
+          {bundle.plan === "noPlan" ? (
+            <h2 className="font-gilroy font-medium text-[18px]">No Plan</h2>
+          ) : (
+            <div className="flex items-center gap-3 w-full">
+              <div className="flex justify-between w-full">
+                <div className="flex items-center gap-1">
+                  <WyzeGuaranteeIcon className="md:w-10 md:h-10 w-5 h-5 translate-y-0.5 md:translate-y-1" />
 
-                <div className="xl:text-[20px] md:text-[16px] font-gilroy font-bold">
-                  <span>Cam</span>{" "}
-                  <span className="text-[#4E2FD2]">Unlimited</span>
+                  <div className="xl:text-[20px] md:text-[16px] font-gilroy font-bold">
+                    <span>Cam</span>{" "}
+                    <span className="text-[#4E2FD2]">Unlimited</span>
+                  </div>
                 </div>
-              </div>
 
-              <div
-                className="
-                  flex flex-col xl:flex-row
-                  xl:gap-[10px]
-                  items-end sm:items-center
-                  font-gilroy font-medium
-                  text-[12px] sm:text-[16px]
-                "
-              >
-                <p className="line-through text-[#6F7882]">$12.99/mo</p>
-
-                <p
+                <div
                   className="
-                    text-[#4E2FD2] font-semibold
-                    md:-translate-y-1 xl:translate-y-0
+                    flex flex-col xl:flex-row
+                    xl:gap-[10px]
+                    items-end sm:items-center
+                    font-gilroy font-medium
+                    text-[12px] sm:text-[16px]
                   "
                 >
-                  $9.99/mo
-                </p>
+                  <p className="line-through text-[#6F7882]">$12.99/mo</p>
+
+                  <p className="text-[#4E2FD2] font-semibold">$9.99/mo</p>
+                </div>
               </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      )}
 
       {/* Plan Extras */}
       {selectedExtras.map((item) => (

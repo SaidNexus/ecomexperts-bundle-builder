@@ -2,7 +2,6 @@ import SensorIcon from "../../assets/icons/SensorIcon";
 import StepHeader from "../ui/StepHeader";
 import Sensors from "../../data/Sensors.json";
 import SensorsCard from "../shared/SensorsCard";
-import { useBundleContext } from "../../context/BundleContext";
 
 type SensorsStepProps = {
   expandedStep: number;
@@ -11,7 +10,6 @@ type SensorsStepProps = {
 };
 
 export default function SensorsStep({ expandedStep, setExpandedStep, nextStepRef }: SensorsStepProps) {
-  const { selectSensor } = useBundleContext();
   const isExpanded = expandedStep === 3;
 
   const handleNext = () => {

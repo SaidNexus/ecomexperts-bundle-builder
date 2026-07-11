@@ -1,6 +1,6 @@
 import ChevronUpIcon from "../../assets/icons/ChevronUpIcon";
 import ChevronDownIcon from "../../assets/icons/ChevronDownIcon";
-import type { ReactNode, Dispatch, SetStateAction } from "react";
+import type { ReactNode } from "react";
 
 type StepHeaderProps = {
   step: number;

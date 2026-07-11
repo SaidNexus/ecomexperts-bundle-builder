@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { BundleState, ProductVariant } from "../types";
 
 export function useBundle() {

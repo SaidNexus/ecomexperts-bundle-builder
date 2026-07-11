@@ -1,7 +1,6 @@
 import StepHeader from "../../ui/StepHeader";
 import ShieldIcon from "../../../assets/icons/ShieldIcon";
 import UnlimitedPlan from "./UnlimitedPlan";
-import { useState } from "react";
 import { useBundleContext } from "../../../context/BundleContext";
 
 type PlanStepProps = {

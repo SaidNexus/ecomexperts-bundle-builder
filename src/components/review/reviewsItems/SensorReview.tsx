@@ -5,23 +5,23 @@ import sensors from "../../../data/Sensors.json";
 export default function SensorReview() {
   const { bundle, selectSensor } = useBundleContext();
 
-  const selectedSensors = bundle.sensors
-    .map((sensor) => {
-      const product = sensors.find((item) => item.id === sensor.productId);
+  const selectedSensors = bundle.sensors.flatMap((sensor) => {
+    const product = sensors.find((item) => item.id === sensor.productId);
 
-      if (!product) return null;
+    if (!product) return [];
 
-      const variant = product.variants.find((v) => v.color === sensor.color);
+    const variant = product.variants.find((v) => v.color === sensor.color);
 
-      if (!variant) return null;
+    if (!variant) return [];
 
-      return {
+    return [
+      {
         product,
         variant,
         quantity: sensor.quantity,
-      };
-    })
-    .filter(Boolean);
+      },
+    ];
+  });
 
   return (
     <div className="space-y-[8px] pt-[15px] border-t border-[#CED6DE]">
@@ -36,8 +36,8 @@ export default function SensorReview() {
           {/* IMG AND NAME */}
           <div className="gap-2 sm:gap-[12px] items-center flex min-w-0 flex-1">
             <div
-              className="w-[35px] h-[35px] sm:w-[41px] sm:h-[41px] flex items-center
-              rounded-[5px] bg-white justify-center flex-shrink-0"
+              className="w-[35px] h-[35px] sm:w-[41px] sm:h-[41px]
+              flex items-center rounded-[5px] bg-white justify-center flex-shrink-0"
             >
               <img
                 src={item.variant.image}
@@ -46,7 +46,7 @@ export default function SensorReview() {
               />
             </div>
 
-            <h1 className="text-[14px] Ffont-gilroy font-medium ">
+            <h1 className="text-[14px] font-gilroy font-medium">
               {item.product.name}
             </h1>
           </div>
@@ -64,7 +64,11 @@ export default function SensorReview() {
               }
             />
 
-            <div className="flex flex-col xl:flex-row sm:gap-[10px] items-end sm:items-center font-gilroy font-medium text-[12px] sm:text-[16px]">
+            <div
+              className="flex flex-col xl:flex-row sm:gap-[10px]
+              items-end sm:items-center font-gilroy
+              font-medium text-[12px] sm:text-[16px]"
+            >
               {item.variant.originalPrice && (
                 <p className="text-[#6F7882] line-through">
                   ${(item.variant.originalPrice * item.quantity).toFixed(2)}

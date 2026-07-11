@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ProtectionIcon from "../../../assets/icons/ProtectionIcon";
 import StepHeader from "../../ui/StepHeader";
 import ProtectionCards from "../../../data/Protection.json";

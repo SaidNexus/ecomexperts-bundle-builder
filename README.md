@@ -49,7 +49,7 @@ This will compile TypeScript and generate production-ready assets in the `dist` 
 - **State Granularity:** The entire bundle state is currently managed in a single context provider. In a very large application, this might cause unnecessary re-renders. A future optimization could involve splitting the context or using memoization (`useMemo`, `useCallback`) to optimize performance.
 - **Hardcoded Product Rules:** Some business rules (like the pricing of the unlimited plan) are simplified and handled via specific IDs or hardcoded checks in the utility functions to meet the rapid prototype requirements.
 
-## Screenshots
-*(Screenshots placeholders - replace with actual application images)*
-![Desktop View](#)
-![Mobile View](#)
+## Demo
+
+Live Demo:
+(https://bundle-builder-yehia-dev.vercel.app)
